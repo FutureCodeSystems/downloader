@@ -1,0 +1,73 @@
+<!doctype>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<! style sheet that has stuff that is unique to this program only>
+	<link rel="stylesheet" type="text/css" href="stylings.css">
+	
+	<! style sheet that has stuff that is uniform on most pages>
+	<link rel="stylesheet" type="text/css" href="../../sitewide/stylings.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
+	<script type="text/javascript" src="javascript.js"></script>
+	
+	<script type="text/javascript" src="../../sitewide/drawitems.js"></script>
+	
+	<title>Atwood Machine Lab</title>
+</head>
+
+
+
+<body onload="initialize();">
+
+<div id="FullPage">
+
+	<div id = 'MainBody'>
+	
+		<div id = "ProgramTitle" Class = "Titles">Atwood Machine Lab</div>
+		
+		<div id = "OverviewSection">
+			<img id="OverviewPicture" src="images/OverviewPicture.png" alt="Overview Picture for Atwood Machine Lab" width="300" height="200">
+			<div id="LabDirections" Class = "Directions">
+				This lab is a simulation of the Atwood experiment. Find the slope of the velocity-time graph to get the acceleration.  Do multiple scenarios see how the acceleration of the system varies with total mass or with driving force.
+				<br /><br />
+				When you are ready to start the experiment, click on the begin button
+			</div>
+			<div id = "BeginButton" Class = "Button" onclick = "LoadIt()">Begin</div>
+		</div>
+		
+		<div id = "LabSection">
+			<div id = "DrawingSectionOne">
+				<canvas id = "CanvasOne" width="925" height="600" style="border:1px solid #c3c3c3;">
+					Your browser does not support HTML 5.0 Canvas...get a better browser!!!
+				</canvas>
+				<div id = "StartButton" Class = "Button" onclick = "StartIt()">Start</div>
+				<div id = "ResetButton" Class = "Button" onclick = "ResetIt()">Reset</div>
+				<div id = "SwitchPlanet" Class = "InvisibleButton" onclick = "SwitchPlanet()"></div>
+				<div id = "ChangeMass1Up" Class = "InvisibleButton" onclick = "ChangeMassOne(5)"></div>
+				<div id = "ChangeMass1Down" Class = "InvisibleButton" onclick = "ChangeMassOne(-5)"></div>
+				<div id = "ChangeMass2Up" Class = "InvisibleButton" onclick = "ChangeMassTwo(5)"></div>
+				<div id = "ChangeMass2Down" Class = "InvisibleButton" onclick = "ChangeMassTwo(-5)"></div>
+			</div>
+			<div id = "DrawingSectionTwo">
+				<canvas id = "CanvasTwo" width="925" height="600" style="border:1px solid #c3c3c3;">
+					Your browser does not support HTML 5.0 Canvas...get a better browser!!!
+				</canvas>
+			</div>	
+			<div id = "DrawingSectionThree">
+				<canvas id = "CanvasThree" width="925" height="600" style="border:1px solid #c3c3c3;">
+					Your browser does not support HTML 5.0 Canvas...get a better browser!!!
+				</canvas>
+			</div>
+			<div id = "DataArea">
+				<div id = "CloseDataArea" onClick="RawData()">x</div>
+				<div id = "DataTitle" class="Directions">Here is the raw data from your graph.<p/>Feel free to copy and paste the data to another program.</div>
+				<textarea id = "RawDataBox"></textarea>
+			</div>		
+		</div>			
+	</div>
+</div>
+</body>
+</html>
